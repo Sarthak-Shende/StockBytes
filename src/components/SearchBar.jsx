@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import { TextField, Autocomplete , Box} from "@mui/material";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
-
+import { useContext } from "react";
+import { tickerContext } from "../contexts";
 
 const SearchBar = () => {
-    //const [keyword,setKeyword]= useState("");
+    
     const loading= useRef(false);
     const [inputKeyword,setInputKeyword] = useState("");
     const [keywordData,setKeywordData] = useState([]);
+    const [keyword,setKeyword]= useState(null);
+    const {setTicker} = useContext(tickerContext);
     
     useEffect(() => {
     loading.current = true;
@@ -31,9 +34,11 @@ const SearchBar = () => {
     };
 }, [inputKeyword]);
 
-    //console.log(keywordData);
+    
+    //console.log(keyword);
     //console.log(inputKeyword);
-
+    keyword?setTicker(keyword["1. symbol"]):null;
+    
     return(
         <Autocomplete 
             options={keywordData}
@@ -52,6 +57,7 @@ const SearchBar = () => {
                 <TextField {...params} label="Search stock..." />
             )}
             onInputChange={(e,newval) => setInputKeyword(newval)}
+            onChange={(e,newVal) => setKeyword(newVal) }
         />
     )
 }

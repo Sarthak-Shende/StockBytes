@@ -1,10 +1,11 @@
-import React from 'react'
 import Graph from './Graph';
+import Overview from './Overview';
 
 const Stock = () => {
     return (
         <>
         <Graph/>
+        <Overview/>
         </>
     )
 }

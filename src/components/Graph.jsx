@@ -1,16 +1,18 @@
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { useState,useEffect } from "react";
 import { AreaChart, YAxis, XAxis, Area,Tooltip } from "recharts";
+import { useContext } from "react";
+import { tickerContext } from "../contexts";
 
 const Graph = () => {
     const [stockData,setStockData] = useState(null);
-    const [selectedStock,setSelectedStock]= useState('AAPL');
-
+    //const [selectedStock,setSelectedStock]= useState('AAPL');
+    const {ticker}= useContext(tickerContext);
+    const selectedStock=ticker;
     useEffect( () => {
         fetchFromAPI(`query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${selectedStock}&outputsize=full&apikey=${process.env.AV_API_KEY}`)
         .then((data) => setStockData(data));
     },[selectedStock] );
-    
     
     const stockArray=[];
 
@@ -34,7 +36,7 @@ const Graph = () => {
         <AreaChart width={730} height={250} data={stockArray} margin={{top: 10, right:30, left:0, bottom:0}}>
             <XAxis dataKey="day" />
             <YAxis/>
-            <Area dataKey="Stock Price" stroke="#000000" fill="#999999" strokeWidth={2}  name="Stock Price" unit={"$"} />
+            <Area dataKey="Stock Price" stroke="#000000" fill="#999999" strokeWidth={2}  name="Stock Price" />
             <Tooltip />
         </AreaChart>
         </>
