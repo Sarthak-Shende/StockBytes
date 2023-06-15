@@ -1,6 +1,6 @@
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import {Box} from "@mui/material";
-import {Navbar,Stock} from "./components";
+import {Navbar,Stock, WorldMap} from "./components";
 import { useState } from "react";
 import { tickerContext } from "./contexts";
 
@@ -13,7 +13,8 @@ const App = () => {
             <tickerContext.Provider value= {{ticker,setTicker}} >
             <Navbar />
             <Routes>
-                <Route exact path="/" element={<Stock />} />
+                <Route exact path="/stocks" element={<Stock />} />
+                <Route exact path="/global market" element={<WorldMap />} />
             </Routes>
             </tickerContext.Provider>
         </Box>
