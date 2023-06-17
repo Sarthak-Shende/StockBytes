@@ -5,13 +5,5 @@ export {default as Menu} from "./Menu";
 export {default as Graph} from "./Graph";
 export {default as Overview} from "./Overview";
 export {default as WorldMap} from "./WorldMap";
-
-/* <Paper component="form" onSubmit={handleSubmit} sx={{ borderRadius:20, border:'1px solid #e3e3e3', pl:2, boxShadow:"none", mr:{sm:5} }} >
-            <input placeholder="Search..." value={selectedKeyword} onChange={(e) => setSelectedKeyword(e.target.value)} />
-            <IconButton type="submit" sx={{p:'10px', color:"black"}} >
-                <Search/>
-            </IconButton>
-        </Paper>
-        getOptionLabel={}
-        value={}
-        */
+export {default as NewsFeed} from "./NewsFeed";
+export {default as NewsCard} from "./NewsCard";
