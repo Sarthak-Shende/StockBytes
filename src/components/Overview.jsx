@@ -2,9 +2,9 @@ import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { tickerContext } from "../contexts";
-import { Typography, Box, Paper, Card, CardContent } from "@mui/material";
+import {Card, CardContent, Typography, Grid } from "@mui/material";
 
-const Overview = () => {
+const Overview = ({chooseCompany}) => {
     const [stockData,setStockData] = useState([]);
     const {ticker}= useContext(tickerContext);
 
@@ -55,14 +55,12 @@ const Overview = () => {
         "Outstanding Shares": parseFloat(stockData["SharesOutstanding"]).toLocaleString(),
     };
 
+    chooseCompany(stockData["Name"]);
 
     return (
     <>
-        <Typography variant="h2" >
-                Company Overview: {stockData["Name"]}
-        </Typography>
         {Object.keys(data).map((info) => (
-            <Card key={info} variant="outlined" sx={{display: 'inline-block', m:1}} >
+            <Card key={info} variant="outlined" id="card" sx={{m:1}} >
             <CardContent>
                 <Typography>
                     {info}: {data[info]}

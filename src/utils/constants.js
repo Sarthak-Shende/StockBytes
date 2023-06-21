@@ -1,6 +1,6 @@
-export const logo = "https://i.ibb.co/NxBBnqX/81f62a62-85f8-4b4c-94e2-9249d24cc3c3.jpg";
+export const logo = "https://i.ibb.co/4dQKhSs/6fa89601-99ed-4e50-ac5c-eba726097528.jpg";
 export const categories= [
-    "Stocks", "Global Market", "News", "Commodities", "Technical Indicators",
+    "Stocks", "News", "Global Market"
 ];
 export const location = [
     {"region": "United States", "latitude":39.73915,"longitude": -104.9847 },

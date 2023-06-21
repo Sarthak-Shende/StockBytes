@@ -16,8 +16,8 @@ const NewsFeed = () => {
         .then((data) => setNewsData(data["feed"]));
     },[selectedMenu]);
 
-    console.log(topics[selectedMenu]);
-    console.log(newsData);
+    //console.log(topics[selectedMenu]);
+    //console.log(newsData);
 
     return (
         <>

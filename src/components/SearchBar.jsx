@@ -34,9 +34,6 @@ const SearchBar = () => {
     };
 }, [inputKeyword]);
 
-    
-    //console.log(keyword);
-    //console.log(inputKeyword);
     keyword?setTicker(keyword["1. symbol"]):null;
     
     return(

@@ -3,3 +3,31 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+#logo {
+  border-radius: 50%;
+  width: 30%;
+  height: auto;
+}
+
+button {
+  background-color: #cc00cc;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 16px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #990099;
+}
+
+button:focus {
+  background-color: #660066;
+}
+
+#card {
+  display: inline-block;
+  border-width: 2px;
+  border-radius: 15px;
+}

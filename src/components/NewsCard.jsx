@@ -13,7 +13,7 @@ const NewsCard = ({newsData}) => {
                         {info["summary"]}
                     </Typography>
                 </CardContent>
-                <CardMedia image={info["banner_image"]} sx={{ objectFit: "cover",height: "144px", width: "256px" }} component="img" alt="image" />
+                <CardMedia image={info["banner_image"]} sx={{ objectFit: "cover",height: "auto", width: "15%" }} component="img" alt="image" />
             </Card>
         ))
         }

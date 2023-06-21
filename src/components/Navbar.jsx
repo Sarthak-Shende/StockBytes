@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../utils/constants";
 import SearchBar from "./SearchBar";
@@ -21,9 +21,12 @@ const Navbar = () => {
     return(
     <>
     <Stack direction="row" alignItems="center" p={2} sx={{position:"sticky",top:0,background:"#ffffff",justifyContent:"space-between"}} >
-        <Link to="/" style={{display:"flex" ,alignItems:"center" }} >
-            <img src={logo} alt="logo" height={45} width={45} />
+        <Link to="/stocks" style={{display:"flex" ,alignItems:"center" }} >
+            <img id="logo" src={logo} alt="logo" />
         </Link>
+        <Typography variant="h3" component="h2" >
+            StockBytes
+        </Typography>
         <SearchBar/>
     </Stack>
 
