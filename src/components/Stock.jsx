@@ -12,18 +12,23 @@ const Stock = () => {
 
     return (
         <>
-        <Typography variant='h1' >{company}</Typography>
-        <Typography variant='h2' >
-            Chart
+        <Typography component='h1' textAlign='center' fontWeight='regular' color="#800000" className="main-heading" >
+            Company: {company}
         </Typography>
+        <Typography component='h2' color="#800000" className="sub-heading" >
+            Chart:
+        </Typography>
+        <br />
         <Graph/>
-        <Typography variant='h2' >
-            Profile and Financials
+        <Typography component='h2' color="#800000" className="sub-heading" >
+            Profile and Financials:
         </Typography>
+        <br />
         <Overview chooseCompany={chooseCompany} />
-        <Typography variant='h2' >
-            News
+        <Typography component='h2' color="#800000" className="sub-heading" >
+            News:
         </Typography>
+        <br />
         <StockNews/>
         </>
     )

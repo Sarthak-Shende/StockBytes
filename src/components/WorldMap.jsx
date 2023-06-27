@@ -1,4 +1,4 @@
-import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
+import { ComposableMap, Geographies, Geography, Marker, Sphere } from "react-simple-maps";
 import { Typography } from "@mui/material";
 import { useState, useEffect } from "react";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
@@ -15,10 +15,11 @@ const WorldMap = () => {
 
     return(
         <>
-        <Typography variant="h1" >
+        <Typography component='h2' textAlign='center' color="#800000" className="sub-heading" >
             Global Market Status
         </Typography>
         <ComposableMap >
+            <Sphere strokeWidth={1} />
             <Geographies geography={mapData} >
                 {({geographies}) => 
                 geographies.map((geo) => (<Geography key={geo.rsmKey} geography={geo} fill="#00b300" stroke="#404040" strokeWidth={0.25} /> ))
@@ -26,7 +27,7 @@ const WorldMap = () => {
             </Geographies>
             {status.map((obj)=> (
                 <Marker key={obj["region"]} coordinates={[obj["longitude"],obj["latitude"]]} fill="#e60000" >
-                    <text font-size="7px" font-weight="bold" >
+                    <text font-size="9px" font-weight="bold" >
                     {obj["region"]}: {obj["current_status"]}
                     </text>
                 </Marker>

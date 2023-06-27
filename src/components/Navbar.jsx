@@ -20,18 +20,18 @@ const Navbar = () => {
     
     return(
     <>
-    <Stack direction="row" alignItems="center" p={2} sx={{position:"sticky",top:0,background:"#ffffff",justifyContent:"space-between"}} >
+    <Stack direction="row" alignItems="center" p={2} sx={{position:"sticky",top:0,background:"#E63946",justifyContent:"space-between"}} >
         <Link to="/stocks" style={{display:"flex" ,alignItems:"center" }} >
             <img id="logo" src={logo} alt="logo" />
         </Link>
-        <Typography variant="h3" component="h2" >
+        <Typography component="h2" color="#ffffff" className="main-heading" textAlign='center' >
             StockBytes
         </Typography>
         <SearchBar/>
     </Stack>
 
-    <Stack direction="row" alignItems="center" p={2} sx={{position:"static", backgroun:"#ffffff"}} >
-        <Menu selectedMenu={selectedMenu} onSelectMenu={handleMenuSelect} categories={categories} />
+    <Stack direction="row" alignItems="center" p={2} sx={{position:"static", background:"#E63946"}} >
+        <Menu selectedMenu={selectedMenu} onSelectMenu={handleMenuSelect} categories={categories} id="navbar" />
     </Stack>
     </>
     )

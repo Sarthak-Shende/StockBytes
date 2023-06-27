@@ -16,12 +16,10 @@ const NewsFeed = () => {
         .then((data) => setNewsData(data["feed"]));
     },[selectedMenu]);
 
-    //console.log(topics[selectedMenu]);
-    //console.log(newsData);
-
     return (
         <>
-        <Menu selectedMenu={selectedMenu} onSelectMenu={handleMenuSelect} categories={newsCategories} />
+        <Menu selectedMenu={selectedMenu} onSelectMenu={handleMenuSelect} categories={newsCategories} id="newsfeed" />
+        <br />
         <NewsCard newsData={newsData} />
         </>
     )

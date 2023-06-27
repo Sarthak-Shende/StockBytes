@@ -20,7 +20,7 @@ const SearchBar = () => {
         fetchFromAPI(
         `query?function=SYMBOL_SEARCH&keywords=${inputKeyword}&apikey=${process.env.AV_API_KEY}`
         ).then((data) => {
-        setKeywordData(data["bestMatches"]);
+        setKeywordData(data["bestMatches"].filter(obj => obj["3. type"] === "Equity"));
         loading.current = false;
         });
     } else {
@@ -41,20 +41,21 @@ const SearchBar = () => {
             options={keywordData}
             isOptionEqualToValue={(option,value) => option["1. symbol"] === value["1. symbol"]}
             loading={loading.current}
-            sx={{width:300}}
+            sx={{background:'#cccccc'}}
             filterOptions={(x) => x}
             noOptionsText={"Enter correct stock ticker"}
             getOptionLabel={(option) => `${option["1. symbol"]}`}
             renderOption={(props,keywordData) => (
                 <Box component="li" {...props} >
-                    {keywordData["2. name"]}  symbol:{keywordData["1. symbol"]} ({keywordData["3. type"]} from {keywordData["4. region"]} )
+                    {keywordData["2. name"]}  symbol:{keywordData["1. symbol"]} ({keywordData["4. region"]} )
                 </Box>
             )}
             renderInput={(params) => (
-                <TextField {...params} label="Search stock..." />
+                <TextField {...params} label="Search stock..." size="small" />
             )}
             onInputChange={(e,newval) => setInputKeyword(newval)}
             onChange={(e,newVal) => setKeyword(newVal) }
+            id="search-bar"
         />
     )
 }

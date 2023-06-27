@@ -43,3 +43,13 @@ const SearchBar = () => {
 }
 
 export default SearchBar;
+
+{/*
+    <Card key={info} variant="outlined" id="card" sx={{m:0.2,p:0.2 }} >
+            <CardContent >
+                <Typography className="text" >
+                    {info}: {data[info]}
+                </Typography>
+            </CardContent>
+            </Card>
+*/}

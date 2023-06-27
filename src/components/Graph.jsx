@@ -8,7 +8,6 @@ const Graph = () => {
     const [stockData,setStockData] = useState(null);
     const {ticker}= useContext(tickerContext);
     const [windowSize,setWindowSize] = useState([window.innerWidth, window.innerHeight]);
-    const selectedStock=ticker;
 
     useEffect(() => {
         const handleWindowResize = () => {
@@ -23,9 +22,9 @@ const Graph = () => {
     }, []);
 
     useEffect( () => {
-        fetchFromAPI(`query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${selectedStock}&outputsize=full&apikey=${process.env.AV_API_KEY}`)
+        fetchFromAPI(`query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${ticker}&outputsize=full&apikey=${process.env.AV_API_KEY}`)
         .then((data) => setStockData(data));
-    },[selectedStock] );
+    },[ticker] );
     
     const stockArray=[];
 
@@ -53,6 +52,7 @@ const Graph = () => {
             <Area dataKey="Stock Price" stroke="#000000" fill="#999999" strokeWidth={2}  name="Stock Price" activeDot={true} />
             <Tooltip />
         </AreaChart>
+        <br />
         </>
     )
 }

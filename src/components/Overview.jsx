@@ -2,7 +2,7 @@ import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { tickerContext } from "../contexts";
-import {Card, CardContent, Typography, Grid } from "@mui/material";
+import {Card, CardContent, Typography, Grid, Box } from "@mui/material";
 
 const Overview = ({chooseCompany}) => {
     const [stockData,setStockData] = useState([]);
@@ -60,15 +60,15 @@ const Overview = ({chooseCompany}) => {
     return (
     <>
         {Object.keys(data).map((info) => (
-            <Card key={info} variant="outlined" id="card" sx={{m:1}} >
-            <CardContent>
-                <Typography>
+            <Box sx={{bgcolor:'background.paper',border:3, borderColor:'LightGrey',borderRadius:4, m:"0.5vw", p:"1vw", display:"inline-block" }} >
+                <Typography className="text" >
                     {info}: {data[info]}
                 </Typography>
-            </CardContent>
-            </Card>
+            </Box>
             ) )
         }
+        <br />
+        <br />
     </>
     )
 }

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -10,24 +14,87 @@ body {
   height: auto;
 }
 
-button {
-  background-color: #cc00cc;
+.main-heading {
+  font-size: 3.5vw !important;
+}
+
+.sub-heading {
+  font-size: 2.5vw !important;
+}
+
+#navbar {
+  background-color: #ff6666;
   font-size: 14px;
-  padding: 10px 20px;
+  padding: 0.5vw 0.5vw;
   border-radius: 16px;
+  border-color: black;
   font-weight: bold;
 }
 
-button:hover {
-  background-color: #990099;
+#navbar:hover {
+  background-color: #b35900;
 }
 
-button:focus {
-  background-color: #660066;
+#navbar:focus {
+  background-color: #990000;
 }
 
-#card {
-  display: inline-block;
-  border-width: 2px;
-  border-radius: 15px;
+#newsfeed {
+  background-color: #6666ff;
+  font-size: 12px;
+  padding: 0.5vw 0.5vw;
+  border-radius: 16px;
+  font-weight: normal;
+}
+
+#newsfeed:hover {
+  background-color: #0000ff;
+}
+
+#newsfeed:focus {
+  background-color: #000099;
+}
+
+.text {
+  font-size: 1vw !important;
+}
+
+#news-heading {
+  font-size: 1.5vw !important;
+}
+
+#image {
+  height: auto;
+  width: 15vw;
+}
+
+#search-bar {
+  width: 12vw;
+}
+
+@media screen and (max-width: 600px){
+  .text {
+      font-size: 3vw !important;
+  }
+
+  #news-heading {
+    font-size: 4vw !important;
+  }
+
+  .sub-heading {
+    font-size: 4.5vw !important;
+  }
+
+  .main-heading {
+    font-size: 6vw !important;
+  }
+
+  #image {
+    height: auto;
+    width: 20vw;
+  }
+
+    #search-bar {
+      width: 19vw;
+    }
 }
