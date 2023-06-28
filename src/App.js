@@ -3,11 +3,13 @@ import {Box} from "@mui/material";
 import {Navbar,NewsFeed,Stock, WorldMap} from "./components";
 import { useState } from "react";
 import { tickerContext } from "./contexts";
-
+import { ThemeProvider, useTheme }from "@mui/material/styles";
 const App = () => {
     
     const [ticker,setTicker] = useState("AAPL");
+    const theme= useTheme();
     return(
+    <ThemeProvider theme={theme} >
     <BrowserRouter>
         <Box sx={{backgroundColor:"#ffffff"}} >
             <tickerContext.Provider value= {{ticker,setTicker}} >
@@ -20,6 +22,7 @@ const App = () => {
             </tickerContext.Provider>
         </Box>
     </BrowserRouter>
+    </ThemeProvider>
     );
 }
 

@@ -8,3 +8,4 @@ export {default as WorldMap} from "./WorldMap";
 export {default as NewsFeed} from "./NewsFeed";
 export {default as NewsCard} from "./NewsCard";
 export {default as StockNews} from "./StockNews";
+export {default as MobileMenu} from "./MobileMenu";
