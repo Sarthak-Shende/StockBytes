@@ -5,6 +5,9 @@
 <h2>Introduction</h2>
 <p>StockBytes is a web application designed to provide users with valuable insights and information about the stock market. With StockBytes, users can easily access and analyze stock data, stay updated with the latest news, and gain a deeper understanding of market trends and events.</p>
 <br>
+<h2>Deployment</h2>
+<p>The StockBytes web app is hosted on Netlify and can be accessed using the following link: <a href="https://stockbytes.netlify.app">StockBytes Web App</a>.</p>
+<br>
 <h2>Technologies</h2>
 <ul>
 <li> Front-end: React, Material-UI, HTML, CSS and JavaScript </li>
